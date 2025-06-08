@@ -76,7 +76,10 @@ store.on("error", function(e){
     res.locals.curUser = req.user;
     next();
  });
- 
+ app.get('/', (req, res) => {
+  res.redirect('/listings');
+});
+
  app.use("/listings", listingsRouter);
  app.use("/listings/:id/reviews", reviewsRouter);
  app.use("/", userRouter);
