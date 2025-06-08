@@ -35,7 +35,7 @@ if (process.env.NODE_ENV !== 'production') {
  
 const store= MongoStore.create({
    crypto: {
-      secrect: process.env.SECRECT,
+      secrect: process.env.SECRET,
    },
    touchAfter: 24*60*60,
    mongoUrl: process.env.MONGO_URI
@@ -46,7 +46,7 @@ store.on("error", function(e){
 
  const sessionOptions = {
     store,
-    secret: process.env.SECRECT,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
